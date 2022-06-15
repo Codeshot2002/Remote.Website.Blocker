@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/app_name_text"
+        android:layout_width="328dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="52dp"
+        android:background="#000000"
+        android:backgroundTint="#FFFFFF"
+        android:gravity="center_vertical"
+        android:text="Type the website you want to block in your host computer"
+        android:textAlignment="viewStart"
+        android:textAllCaps="false"
+        android:textColor="#757575"
+        android:textSize="16sp"
+        android:typeface="normal"
+        app:layout_constraintBottom_toTopOf="@+id/add_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.53"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <EditText
+        android:id="@+id/editText_website"
+        android:layout_width="262dp"
+        android:layout_height="48dp"
+        android:ems="10"
+        android:hint="Website here"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.107"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/app_name_text"
+        app:layout_constraintVertical_bias="0.02" />
+
+    <Button
+        android:id="@+id/add_button"
+        android:layout_width="74dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="37dp"
+        android:background="#655F5F"
+        android:text="ADD"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/scrollView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/editText_website"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.887" />
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="323dp"
+        android:layout_height="384dp"
+        android:layout_marginTop="15dp"
+        android:backgroundTint="#575757"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText_website"
+        app:layout_constraintVertical_bias="0.0">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#8A8787"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#F3E8AD"
+                android:text="Websites blocked"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/websites_textView"
+                android:layout_width="match_parent"
+                android:layout_height="355dp"
+                android:background="#ACACAC"
+                android:textColor="#FF0000"
+                android:textSize="18sp" />
+        </LinearLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/send_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Send"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scrollView2"
+        app:layout_constraintVertical_bias="0.177" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
