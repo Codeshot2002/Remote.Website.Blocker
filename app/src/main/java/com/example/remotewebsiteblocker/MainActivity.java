@@ -4,14 +4,17 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
@@ -22,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView textView;
     private String databasedata;
 
+    ListView mylistview;
     private ArrayList<String> websites = new ArrayList<String>();
     private String webs = "";
 
@@ -42,8 +46,9 @@ public class MainActivity extends AppCompatActivity {
         //all the views referenced
         addbutton = findViewById(R.id.add_button);
         website_text = findViewById(R.id.editText_website);
-        textView = findViewById(R.id.websites_textView);
         sendButton = findViewById(R.id.send_button);
+        mylistview = findViewById(R.id.listview);
+        ArrayAdapter ad = new ArrayAdapter(this, android.R.layout.simple_list_item_1, websites);
 
         addbutton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -58,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
                         String data = (count + 1) + ") ";
                         String output = data + websites.get(count) + "\n";
                         webs += output;
-                        textView.setText(webs);
+                        mylistview.setAdapter(ad);
                         count++;
                     }
                     catch(Exception e){

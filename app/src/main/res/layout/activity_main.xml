@@ -8,62 +8,66 @@
 
     <TextView
         android:id="@+id/app_name_text"
-        android:layout_width="328dp"
-        android:layout_height="80dp"
+        android:layout_width="275dp"
+        android:layout_height="55dp"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="52dp"
-        android:background="#000000"
-        android:backgroundTint="#FFFFFF"
+        android:background="#B39D9D"
+        android:backgroundTint="#C66B28"
+        android:fontFamily="sans-serif-condensed"
         android:gravity="center_vertical"
-        android:text="Type the website you want to block in your host computer"
-        android:textAlignment="viewStart"
+        android:text="Remote Website blocker"
+        android:textAlignment="center"
         android:textAllCaps="false"
-        android:textColor="#757575"
-        android:textSize="16sp"
+        android:textColor="#FFFFFF"
+        android:textSize="24dp"
+        android:textStyle="bold"
         android:typeface="normal"
         app:layout_constraintBottom_toTopOf="@+id/add_button"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.53"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.25" />
 
     <EditText
         android:id="@+id/editText_website"
         android:layout_width="262dp"
         android:layout_height="48dp"
         android:ems="10"
-        android:hint="Website here"
+        android:hint="Add website"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.107"
+        app:layout_constraintHorizontal_bias="0.214"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/app_name_text"
-        app:layout_constraintVertical_bias="0.02" />
+        app:layout_constraintVertical_bias="0.059" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/add_button"
         android:layout_width="74dp"
         android:layout_height="48dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginEnd="37dp"
-        android:background="#655F5F"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="32dp"
+        android:background="@android:color/holo_blue_bright"
         android:text="ADD"
         android:textColor="#FFFFFF"
+        android:textColorHighlight="#49B54E"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/scrollView2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/editText_website"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.887" />
+        app:layout_constraintVertical_bias="0.841"
+        app:rippleColor="#6B4CAF50" />
 
     <ScrollView
         android:id="@+id/scrollView2"
         android:layout_width="323dp"
         android:layout_height="384dp"
-        android:layout_marginTop="15dp"
-        android:backgroundTint="#575757"
+        android:layout_marginTop="20dp"
+        android:background="#ACACAC"
+        android:backgroundTint="#F4F4F4"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -80,32 +84,33 @@
                 android:id="@+id/textView2"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="#F3E8AD"
+                android:background="@android:color/holo_blue_bright"
                 android:text="Websites blocked"
                 android:textAlignment="center"
                 android:textColor="#000000"
                 android:textSize="20sp" />
 
-            <TextView
-                android:id="@+id/websites_textView"
+            <ListView
+                android:id="@+id/listview"
                 android:layout_width="match_parent"
-                android:layout_height="355dp"
-                android:background="#ACACAC"
-                android:textColor="#FF0000"
-                android:textSize="18sp" />
+                android:layout_height="356dp" />
+
         </LinearLayout>
     </ScrollView>
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/send_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@android:color/holo_blue_bright"
         android:text="Send"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/scrollView2"
-        app:layout_constraintVertical_bias="0.177" />
+        app:layout_constraintVertical_bias="0.2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
